@@ -1,0 +1,107 @@
+.progress {
+  border: 1px solid #c7c7c7;
+  border-right: none;
+  position: relative;
+}
+
+
+.progress-inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #7ecc00;
+  opacity: .57;
+  transform: scaleX(0);  
+  transform-origin: center left;
+  transition: transform .4s ease-out;
+}
+
+.boxes {
+  display: flex;
+  width: 100%;
+}
+.box {
+  height: 40px;
+  border-right: 1px solid #c7c7c7;
+  flex: 1;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .33s ease-out;
+  transform: scale(1.3);
+}
+
+body.overlay-is-open .overlay {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+body.overlay-is-open .main-ui {
+  filter: blur(2px);
+}
+
+@keyframes showerror {
+  50% {
+    color: red;
+  transform: scale(1.2);
+  }
+  100% {
+    color :#333;
+    transform: scale(1);
+  }
+}
+
+.wrong-ans {
+  animation: .331s showerror;
+}
+
+.prob {
+  text-align: center;
+  font-weight: bold;
+  font-size: 34px;
+}
+
+.our-form {
+  text-align: center;
+}
+
+.our-field {
+  font-size: 24px;
+  width: 60%;
+  border-radius: 5px;
+}
+
+.btn {
+  width: 30%;
+  font-size: 24px;
+  border-radius: 5px;
+}
+
+.game-result {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.reset-btn {
+  font-size: 24px;
+  border-radius: 5px;
+  background: #080c35;
+  color: #fff;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+}
